@@ -5,6 +5,7 @@ import {init, useConnectWallet} from '@web3-onboard/react'
 import { ethers } from 'ethers'
 import ledgerModule from '@web3-onboard/ledger';
 import injectedModule from '@web3-onboard/injected-wallets'
+import trustModule from '../../../packages/trust/dist/index'
 
 
 
@@ -24,10 +25,11 @@ const buttonStyles = {
 const INFURA__KEY = 'cf540cb0b3b643d399e59aef4f5ac179';
 const ledger = ledgerModule();
 const injected = injectedModule();
+const trust = trustModule();
 
 
 init({
-  wallets: [injected, ledger],
+  wallets: [injected, ledger, trust],
   chains: [
     {
       id: '0x1',
